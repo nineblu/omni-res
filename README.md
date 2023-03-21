@@ -26,6 +26,7 @@ pip install en_vectors_web_lg-2.1.0.tar.gz
 
 -  Follow the instructions of  [DATA_PRE_README.md](./DATA_PRE_README.md) to generate training data and testing data.
 -  Download the pretrained weights of backbone (vgg, darknet, cspdarknet, DResNet, etc.).  Expect for DResNet, all pretrained backbones are trained on COCO 2014 *train+val*  set while removing the images appeared in the *val+test* sets of RefCOCO, RefCOCO+ and RefCOCOg (nearly 6500 images).  Please follow the instructions of  [DATA_PRE_README.md](./DATA_PRE_README.md) to download them.
+-  Also, we provide the necessary json files for training, the downloading url is https://anonymous.4open.science/r/omni_res_data
 
 ## Training and Evaluation 
 
