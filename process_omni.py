@@ -49,7 +49,11 @@ def process_point_labels(seg_pesudo_label, det_label_q, seg_label_q):
     mask_boxes = []
     for i in range(len(seg_pesudo_label)):
         h, w = seg_pesudo_label.shape[1], seg_pesudo_label.shape[2]
-        point_y, point_x = int(det_label_q[i][0][1]*h), int(det_label_q[i][0][0]*w)
+        non_zero_indices = torch.nonzero(seg_label_q[i][0])
+        if non_zero_indices.shape[0] == 0:
+            continue
+        point_y = round(non_zero_indices[:, 0].float().mean().item())
+        point_x = round(non_zero_indices[:, 1].float().mean().item())
         mask_box = process_points_v1(seg_pesudo_label, point_y, point_x, i)
         if len(mask_box)>0:
             box_x, box_y, box_w, box_h = det_label_q[i][0][0]*w, det_label_q[i][0][1]*h, det_label_q[i][0][2]*w, det_label_q[i][0][3]*h
