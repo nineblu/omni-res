@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/python-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-%237732a8)
 
-Omni-RES is a simple and lightweight codebase for the research of Omni-supervised referring expression segmentation, which currently supporting SimRES as base model. Later LAVT model also will be updated. 
+Omni-RES is a simple and lightweight codebase for the research of Omni-supervised referring expression segmentation, which currently supporting SimRES as base model. Later LAVT and ReLA models also will be updated. 
 
 
 ## Installation
