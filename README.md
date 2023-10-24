@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/python-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-%237732a8)
 
-Omni-RES is a simple and lightweight codebase for the research of Omni-supervised referring expression segmentation, which currently supporting MCN as base model. Later LAVT model also will be updated. 
+Omni-RES is a simple and lightweight codebase for the research of Omni-supervised referring expression segmentation, which currently supporting SimRES as base model. Later LAVT model also will be updated. 
 
 
 ## Installation
@@ -30,14 +30,14 @@ pip install en_vectors_web_lg-2.1.0.tar.gz
 
 ## Training and Evaluation 
 
-1. **Config preparation**. Prepare your own configs in [configs](./configs), you don't need to rewrite all the contents in config every time.You can import the config as a python file to use the default configs. For example, to run 10% RefCOCO with omni-box，you can use [mcn_refcoco_omni.py](./configs/mcn_refcoco_omni.py) as follows:
+1. **Config preparation**. Prepare your own configs in [configs](./configs), you don't need to rewrite all the contents in config every time.You can import the config as a python file to use the default configs. For example, to run 10% RefCOCO with omni-box，you can use [simres_refcoco_omni.py](./configs/simres_refcoco_omni.py) as follows:
 
 ```python
 # your own config.py
 from .common.dataset import dataset
 from .common.train import train
 from .common.optim import optim
-from .common.models.mcn import model
+from .common.models.simres import model
 
 # Refine data path depend your own need
 dataset.ann_path["refcoco"] = "./data/anns/refcoco.json"
@@ -50,14 +50,14 @@ dataset.omni_ann_path["refcoco"] = "./data/anns/refcoco_0.9.json"
 
 2. **Train the model**. To start the training, you can input command as follows:
 ```shell
-# Training 10% RefCOCO with omni-box (MCN as base model)
-python -m torch.distributed.launch --nproc_per_node 4 train_omni.py --config configs/mcn_refcoco_omni.py
+# Training 10% RefCOCO with omni-box (SimRES as base model)
+python -m torch.distributed.launch --nproc_per_node 4 train_omni.py --config configs/simres_refcoco_omni.py
 
-# Training 100% RefCOCO in fully supervised learning (MCN as base model)
-python -m torch.distributed.launch --nproc_per_node 4 train_sup.py --config configs/mcn_refcoco_sup.py
+# Training 100% RefCOCO in fully supervised learning (SimRES as base model)
+python -m torch.distributed.launch --nproc_per_node 4 train_sup.py --config configs/simres_refcoco_sup.py
 
-# Training RefCOCO, RefCOCO+, RefCOCOg, Visual Genome with omni-box (MCN as base model)
-python -m torch.distributed.launch --nproc_per_node 4 train_vg.py --config configs/mcn_refcoco_vg.py
+# Training RefCOCO, RefCOCO+, RefCOCOg, Visual Genome with omni-box (SimRES as base model)
+python -m torch.distributed.launch --nproc_per_node 4 train_vg.py --config configs/simres_refcoco_vg.py
 
 ```
 The `training logs`, `config.yaml` and `model checkpoints` will be automatically saved under `cfg.train.output_dir`.
@@ -89,7 +89,7 @@ Setting `train.resume_path` to the specific `checkpoint.pth` you want to resume 
 4. **Test the model.** 
 
 ```shell
-python -m torch.distributed.launch --nproc_per_node 4 eval_engine.py --config configs/mcn_refcoco_omni.py --eval-weights /path/to/checkpoint
+python -m torch.distributed.launch --nproc_per_node 4 eval_engine.py --config configs/simres_refcoco_omni.py --eval-weights /path/to/checkpoint
 ```
 
 

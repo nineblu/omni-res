@@ -15,7 +15,7 @@
 
 import torch.nn as nn
 
-class MCN(nn.Module):
+class SimRES(nn.Module):
     def __init__(
         self, 
         visual_backbone: nn.Module,
@@ -26,7 +26,7 @@ class MCN(nn.Module):
         seg_attention: nn.Module,
         head: nn.Module,
     ):
-        super(MCN, self).__init__()
+        super(SimRES, self).__init__()
         self.visual_encoder = visual_backbone
         self.lang_encoder=language_encoder
         self.fusion_manner=fusion_manner

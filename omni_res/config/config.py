@@ -176,7 +176,7 @@ def get_config(config_path):
     Returns a config object from a config_path.
     Args:
         config_path (str): config file name relative to libai's "configs/"
-            directory, e.g., "common/models/mcn.py"
+            directory, e.g., "common/models/simres.py"
     
     Returns:
         omegaconf.DictConfig: a config object

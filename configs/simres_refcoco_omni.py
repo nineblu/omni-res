@@ -1,26 +1,26 @@
 from .common.dataset import dataset
 from .common.train import train
 from .common.optim import optim
-from .common.models.mcn import model
+from .common.models.simres import model
 
 # Refine data path depend your own need
-dataset.ann_path["refcoco"] = "/ssd1/hml/simrec_data/anns/refcoco.json"
-dataset.image_path["refcoco"] = "/ssd1/hml/simrec_data/images/train2014"
-dataset.mask_path["refcoco"] = "/ssd1/hml/simrec_data/masks/refcoco"
-dataset.sup_ann_path["refcoco"] = "/ssd1/hml/simrec_data/anns/refcoco_0.1.json"
-dataset.omni_ann_path["refcoco"] = "/ssd1/hml/simrec_data/anns/refcoco_0.9.json"
+dataset.ann_path["refcoco"] = "simrec_data/anns/refcoco.json"
+dataset.image_path["refcoco"] = "simrec_data/images/train2014"
+dataset.mask_path["refcoco"] = "simrec_data/masks/refcoco"
+dataset.sup_ann_path["refcoco"] = "simrec_data/anns/refcoco_0.1.json"
+dataset.omni_ann_path["refcoco"] = "simrec_data/anns/refcoco_0.9.json"
 
-dataset.ann_path["refcoco+"] = "/ssd1/hml/simrec_data/anns/refcoco+.json"
-dataset.image_path["refcoco+"] = "/ssd1/hml/simrec_data/images/train2014"
-dataset.mask_path["refcoco+"] = "/ssd1/hml/simrec_data/masks/refcoco+"
-dataset.sup_ann_path["refcoco+"] = "/ssd1/hml/simrec_data/anns/refcoco+_0.1.json"
-dataset.omni_ann_path["refcoco+"] = "/ssd1/hml/simrec_data/anns/refcoco+_0.9.json"
+dataset.ann_path["refcoco+"] = "simrec_data/anns/refcoco+.json"
+dataset.image_path["refcoco+"] = "simrec_data/images/train2014"
+dataset.mask_path["refcoco+"] = "simrec_data/masks/refcoco+"
+dataset.sup_ann_path["refcoco+"] = "simrec_data/anns/refcoco+_0.1.json"
+dataset.omni_ann_path["refcoco+"] = "simrec_data/anns/refcoco+_0.9.json"
 
-dataset.ann_path["refcocog"] = "/ssd1/hml/simrec_data/anns/refcocog_umd.json"
-dataset.image_path["refcocog"] = "/ssd1/hml/simrec_data/images/train2014"
-dataset.mask_path["refcocog"] = "/ssd1/hml/simrec_data/masks/refcocog_umd"
-dataset.sup_ann_path["refcocog"] = "/ssd1/hml/simrec_data/anns/refcocog_0.1.json"
-dataset.omni_ann_path["refcocog"] = "/ssd1/hml/simrec_data/anns/refcocog_0.9.json"
+dataset.ann_path["refcocog"] = "simrec_data/anns/refcocog_umd.json"
+dataset.image_path["refcocog"] = "simrec_data/images/train2014"
+dataset.mask_path["refcocog"] = "simrec_data/masks/refcocog_umd"
+dataset.sup_ann_path["refcocog"] = "simrec_data/anns/refcocog_0.1.json"
+dataset.omni_ann_path["refcocog"] = "simrec_data/anns/refcocog_0.9.json"
 
 dataset.dataset = 'refcoco'
 dataset.aug = True

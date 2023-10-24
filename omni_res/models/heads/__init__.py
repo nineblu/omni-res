@@ -13,5 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .mcn_heads import MCNhead
+from .simres_heads import SimREShead
 from .rec_heads import REChead

@@ -1,17 +1,17 @@
 from .common.dataset import dataset
 from .common.train import train
 from .common.optim import optim
-from .common.models.mcn import model
+from .common.models.simres import model
 
 # Refine data path depend your own need
-dataset.ann_path["refcoco_merge"] = "/ssd1/hml/simrec_data/anns/refcoco_merge+vg.json"
-dataset.image_path["refcoco_merge"] = "/ssd1/hml/simrec_data/images/train2014"
-dataset.mask_path["refcoco_merge"] = "/ssd1/hml/simrec_data/masks"
-dataset.sup_ann_path["refcoco_merge"] = "/ssd1/hml/simrec_data/anns/refcoco_merge.json"
+dataset.ann_path["refcoco_merge"] = "simrec_data/anns/refcoco_merge+vg.json"
+dataset.image_path["refcoco_merge"] = "simrec_data/images/train2014"
+dataset.mask_path["refcoco_merge"] = "simrec_data/masks"
+dataset.sup_ann_path["refcoco_merge"] = "simrec_data/anns/refcoco_merge.json"
 
-dataset.ann_path["vg"] = "/ssd1/hml/simrec_data/anns/refcoco_merge+vg.json"
-dataset.image_path["vg"] = "/ssd1/hml/simrec_data/images/vg"
-dataset.omni_ann_path["vg"] = "/ssd1/hml/simrec_data/anns/vg.json"
+dataset.ann_path["vg"] = "simrec_data/anns/refcoco_merge+vg.json"
+dataset.image_path["vg"] = "simrec_data/images/vg"
+dataset.omni_ann_path["vg"] = "simrec_data/anns/vg.json"
 
 dataset.dataset = 'refcoco_merge,vg'
 dataset.aug = True

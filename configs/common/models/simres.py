@@ -1,11 +1,11 @@
 from omni_res.config import LazyCall
-from omni_res.models.mcn import MCN
+from omni_res.models.simres import SimRES
 from omni_res.models.backbones import DarkNet53
-from omni_res.models.heads import MCNhead
+from omni_res.models.heads import SimREShead
 from omni_res.models.language_encoders.lstm_sa import LSTM_SA
 from omni_res.layers.fusion_layer import SimpleFusion, MultiScaleFusion, GaranAttention
 
-model = LazyCall(MCN)(
+model = LazyCall(SimRES)(
     visual_backbone=LazyCall(DarkNet53)(
         pretrained=False,
         pretrained_weight_path="./data/weights/darknet53_coco.pth",
@@ -42,7 +42,7 @@ model = LazyCall(MCN)(
         d_q=512,
         d_v=512
     ),
-    head=LazyCall(MCNhead)(
+    head=LazyCall(SimREShead)(
         hidden_size=512, 
         anchors=[[137, 256], [248, 272], [386, 271]], 
         arch_mask=[[0, 1, 2]], 

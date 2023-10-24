@@ -23,7 +23,7 @@ from omni_res.layers.aspp import aspp_decoder
 from ..utils.box_op import bboxes_iou
 
 
-class MCNhead(nn.Module):
+class SimREShead(nn.Module):
     """
     detection layer corresponding to yolo_layer.c of darknet
     """
@@ -49,7 +49,7 @@ class MCNhead(nn.Module):
             ignore_thre (float): threshold of IoU above which objectness training is ignored.
         """
 
-        super(MCNhead, self).__init__()
+        super(SimREShead, self).__init__()
         self.anchors = anchors
         self.anch_mask = arch_mask[layer_no]
         self.n_anchors = len(self.anch_mask)
