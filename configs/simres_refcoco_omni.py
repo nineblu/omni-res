@@ -35,8 +35,8 @@ train.data.persistent_workers = True
 train.data.num_workers = 8
 train.data.mean = [0.485, 0.456, 0.406]
 train.data.std = [0.229, 0.224, 0.225]
-train.data.logit_thold = [0.01, 0.2, 0.5] # set threshold for filtering pseudo-labels
-train.data.omni_label = "box"             # point or box
+train.data.logit_thold = [0.01, 0.3, 0.7] # set threshold for filtering pseudo-labels
+train.data.omni_label = "point"             # point or box
 # train.data.mean = [0., 0., 0.]
 # train.data.std = [1., 1., 1.]
 
